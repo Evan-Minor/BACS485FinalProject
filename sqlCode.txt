@@ -34,7 +34,7 @@ Itinerary varchar2(4000) Not Null,
 Description varchar(4000) NOT NULL
 );
 
-<<<<<<< HEAD
+
 Create Table GuideContracts
 (
 Guide_ID_# Integer,
@@ -61,8 +61,10 @@ Foreign Key (Tour_ID#) References Tour(Tour_ID#),
 Primary Key (Accomidation_ID_#)  
 );
 
-Insert into People Foreign Key(Tour_ID#) References Tour(Tour_ID#);
-=======
+
 INSERT into TOUR (tour_id#,TOUR_STATUS,START_DATE,END_DATE,ITINERARY,DESCRIPTION)
     VALUES(1,'Ongoing','11/24/2019','11/26/2019','This is the stuff that they will be doing','Description of the stuff that they will be doing');
->>>>>>> ccca469eb11f8d25a3f5fe5f4cb481c23b2bcd10
+
+
+INSERT into TOUR (tour_id#,TOUR_STATUS,START_DATE,END_DATE,ITINERARY,DESCRIPTION)
+    VALUES(2,'Ongoing','11/26/2019','12/15/2019','They will be skiing for 20 days','Skiing in the alps at several locations');
