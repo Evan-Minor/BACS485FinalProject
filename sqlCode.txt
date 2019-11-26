@@ -65,6 +65,8 @@ Itinerary varchar2(4000) Not Null,
 Description varchar(4000) NOT NULL
 );
 
+//Dozens of insert statements were used to fill in the tables, these are the models of the statements we used.
+
 Insert into GUIDECONTRACT (GUIDE_ID_#,PAYFORTOUR,PERSON_ID_#,TOUR_ID#)
         Values(1,'5000',4,1);
 
