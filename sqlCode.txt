@@ -33,3 +33,31 @@ End_Date varchar2(10) Not Null,
 Itinerary varchar2(4000) Not Null,
 Description varchar(4000) NOT NULL
 );
+
+Create Table GuideContracts
+(
+Guide_ID_# Integer,
+PayForTour Number(10,2),
+Foreign Key (Person_ID_#) References People(Person_ID_#),
+Foreign Key (Tour_ID#) References Tour(Tour_ID#),
+PRIMARY KEY (Guide_ID_#)
+);
+
+Create Table Accomodation
+(
+Accomidation_ID_# Integer,
+Accomidation_Type varchar(255) Not Null,
+Start_Date Date Not Null,
+End_Date Date Not Null,
+Penalty_Fee Number(10,2),
+Pricing_ Number(10,2) Not Null,
+Contact_Reference varchar(10),
+Country varchar(64) Not Null,
+State_Province varchar(2) Not Null,
+City varchar(64) Not Null,
+Street varchar(64) Not Null,
+Foreign Key (Tour_ID#) References Tour(Tour_ID#),
+Primary Key (Accomidation_ID_#)  
+);
+
+Insert into People Foreign Key(Tour_ID#) References Tour(Tour_ID#);
