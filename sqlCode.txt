@@ -33,3 +33,6 @@ End_Date varchar2(10) Not Null,
 Itinerary varchar2(4000) Not Null,
 Description varchar(4000) NOT NULL
 );
+
+INSERT into TOUR (tour_id#,TOUR_STATUS,START_DATE,END_DATE,ITINERARY,DESCRIPTION)
+    VALUES(1,'Ongoing','11/24/2019','11/26/2019','This is the stuff that they will be doing','Description of the stuff that they will be doing');
