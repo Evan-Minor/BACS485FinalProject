@@ -1,0 +1,35 @@
+CREATE SEQUENCE AutoNumber
+  MINVALUE 1
+  MAXVALUE 999999999999999999999999999
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 20;
+
+CREATE TABLE People (
+    Person_ID_# Integer,
+    Name varchar(55) NOT NULL,
+    Date_Of_Birth DATE NOT NULL,
+    Gender varchar(10),
+    Age Integer,
+    Customer_Type varchar(10) NOT NULL,
+    Contact_Reference varchar(10) NOT NULL,
+    Email varchar(255) NOT NULL,
+    Country varchar(64) NOT NULL,
+    State_Province varchar(2) NOT NULL,
+    City varchar(64) NOT NULL,
+    Street varchar(64) NOT NULL,
+    PO_BOX varchar(64),
+    Fax varchar(10),
+    Phone# varchar(10),
+    CellPhone# varchar(10)
+    CONSTRAINT person_pk PRIMARY KEY (Person_ID_#));
+
+Create Table Tour
+(
+Tour_ID# Int Primary Key,
+Tour_Status varchar(10) NOT NULL,
+Start_Date varchar(10) Not Null,
+End_Date varchar2(10) Not Null,
+Itinerary varchar2(4000) Not Null,
+Description varchar(4000) NOT NULL
+);
