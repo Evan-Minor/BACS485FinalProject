@@ -2,3 +2,52 @@ SELECT NAME, ADDRESS, EMAIL, PHONE NUMBER
 	FROM PEOPLE
 	WHERE PEOPLE.Persontype='customer'
 	AND STATE/PROVINCE = 'TX';
+
+
+Query 4
+=======
+select NAME, EMAIL
+    from people
+    where customer_type = 'guide';
+
+
+Query 5
+=======
+select people.name
+    from people, tour, accomodation
+    where people.customer_type = 'guide'
+        and people.Tour_ID# = tour.Tour_ID#
+        and TOUR.TOUR_ID# = accomodation.TOUR_ID#
+            and accomodation.state_province = 'MT'
+            and accomodation.start_date = '11/20/19'
+            and accomodation.accomodation_type = 'lunch';
+        
+/*
+Does not work without adding tour and accomodation to the 'from' clause
+Although oracle warns you they do not aprear in the select statement
+/*
+
+
+
+Query 6
+=======
+select tour.tour_id#
+    from tour, accomodation
+    where tour.tour_id# = accomodation.tour_id#
+        and accomodation.accomodation_type = 'breakfast'
+        and accomodation.start_date = '11/20/19';
+
+/* 
+the output is a little ambiguous ex output --> 3
+may want to add the tour disciption to make it more clear what tour we are refering 
+*/
+
+
+Query 7 
+=======
+select people.name, people.email, people.phone#, people.cellphone#, people.fax
+    from people, tour
+    where tour.tour_ID# = people.tour_ID#
+        and people.customer_type = 'customer'
+        /*and tour.tour_status = 'Future'*/
+        and tour.start_date >= '11/15/2019';
